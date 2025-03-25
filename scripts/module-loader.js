@@ -14,13 +14,24 @@ document.addEventListener("DOMContentLoaded", () => {
       .then((html) => {
         document.getElementById(module.id).innerHTML = html;
 
-        // If there's a corresponding script for the module, load it
+        // Load the corresponding script
         const scriptPath = `scripts/${module.path
           .split("/")
           .pop()
           .replace(".html", ".js")}`;
         const script = document.createElement("script");
         script.src = scriptPath;
+        // When the module's script loads, call its init function if available.
+        script.onload = () => {
+          // For the login-hero module, we call loginHeroInit if it exists.
+          if (
+            module.id === "login-hero-module" &&
+            typeof loginHeroInit === "function"
+          ) {
+            loginHeroInit();
+          }
+          // Add similar conditions for other modules if needed.
+        };
         document.body.appendChild(script);
       })
       .catch((error) => console.error(`Error loading ${module.path}:`, error));

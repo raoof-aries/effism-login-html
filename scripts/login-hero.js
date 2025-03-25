@@ -1,31 +1,32 @@
-const { Navigation, Autoplay } = Swiper;
+// Register Swiper modules using the CDN bundle.
+Swiper.use([Swiper.Navigation, Swiper.Autoplay]);
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Form Switching
-  const loginForm = document.getElementById("loginForm");
+// Expose the initialization function for the login-hero module.
+function loginHeroInit() {
+  // --- Form Switching Functionality ---
+  const loginFormSubmit = document.getElementById("loginFormSubmit");
   const forgotPasswordForm = document.getElementById("forgotPasswordForm");
   const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
   const goBackToLoginBtn = document.getElementById("goBackToLoginBtn");
-  const loginFormSubmit = document.getElementById("loginFormSubmit");
-  const forgotPasswordFormSubmit = document.getElementById(
-    "forgotPasswordFormSubmit"
-  );
-  const formContainer = document.querySelector(".loginHero-form-container");
 
   function switchToForgotPassword() {
-    loginForm.style.display = "none";
+    loginFormSubmit.style.display = "none";
     forgotPasswordForm.style.display = "block";
   }
 
   function switchToLogin() {
-    loginForm.style.display = "block";
+    loginFormSubmit.style.display = "block";
     forgotPasswordForm.style.display = "none";
   }
 
-  forgotPasswordBtn.addEventListener("click", switchToForgotPassword);
-  goBackToLoginBtn.addEventListener("click", switchToLogin);
+  if (forgotPasswordBtn) {
+    forgotPasswordBtn.addEventListener("click", switchToForgotPassword);
+  }
+  if (goBackToLoginBtn) {
+    goBackToLoginBtn.addEventListener("click", switchToLogin);
+  }
 
-  // Login Form Submission
+  // --- Form Submission Handlers ---
   loginFormSubmit.addEventListener("submit", async function (e) {
     e.preventDefault();
     const username = document.getElementById("username").value;
@@ -58,7 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Forgot Password Form Submission
+  const forgotPasswordFormSubmit = document.getElementById(
+    "forgotPasswordFormSubmit"
+  );
   forgotPasswordFormSubmit.addEventListener("submit", async function (e) {
     e.preventDefault();
     const forgotUsername = document.getElementById("forgotUsername").value;
@@ -92,9 +95,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // Swiper Initialization
+  // --- Swiper Initialization ---
   const swiper = new Swiper("#loginSwiper", {
-    modules: [Navigation, Autoplay],
     navigation: {
       nextEl: "#swiperNextBtn",
       prevEl: "#swiperPrevBtn",
@@ -104,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       disableOnInteraction: false,
     },
     loop: true,
-    slidesPerView: 1,
+    slidesPerView: 1.1, // Updated value per your request
     spaceBetween: 30,
   });
-});
+}
