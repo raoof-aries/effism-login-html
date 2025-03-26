@@ -74,14 +74,16 @@
 }
 
 .login_slider-container {
+  position: relative;
   position: absolute;
   left: 35%;
   right: 0;
-  top: 18%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .login_slider {
-  height: 33.33rem;
+  height: auto;
   max-width: 100%;
   border-top-left-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
