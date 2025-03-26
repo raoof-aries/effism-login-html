@@ -4,19 +4,40 @@ Swiper.use([Swiper.Navigation, Swiper.Autoplay]);
 // Expose the initialization function for the login-hero module.
 function loginHeroInit() {
   // --- Form Switching Functionality ---
+  const loginHeroFormContainer = document.querySelector(
+    ".loginHero-form-container"
+  );
   const loginFormSubmit = document.getElementById("loginFormSubmit");
   const forgotPasswordForm = document.getElementById("forgotPasswordForm");
   const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
   const goBackToLoginBtn = document.getElementById("goBackToLoginBtn");
+  const loginTitle = document.querySelector(".LoginHero_title");
 
   function switchToForgotPassword() {
-    loginFormSubmit.style.display = "none";
-    forgotPasswordForm.style.display = "block";
+    loginFormSubmit.classList.add("fade-out");
+    loginTitle.classList.add("fade-out");
+
+    setTimeout(() => {
+      loginFormSubmit.style.display = "none";
+      loginTitle.style.display = "none";
+      forgotPasswordForm.style.display = "block";
+      forgotPasswordForm.classList.remove("fade-out");
+      forgotPasswordForm.classList.add("fade-in");
+    }, 300);
   }
 
   function switchToLogin() {
-    loginFormSubmit.style.display = "block";
-    forgotPasswordForm.style.display = "none";
+    forgotPasswordForm.classList.add("fade-out");
+
+    setTimeout(() => {
+      forgotPasswordForm.style.display = "none";
+      loginFormSubmit.style.display = "block";
+      loginTitle.style.display = "block";
+      loginFormSubmit.classList.remove("fade-out");
+      loginFormSubmit.classList.add("fade-in");
+      loginTitle.classList.remove("fade-out");
+      loginTitle.classList.add("fade-in");
+    }, 300);
   }
 
   if (forgotPasswordBtn) {
@@ -106,7 +127,7 @@ function loginHeroInit() {
       disableOnInteraction: false,
     },
     loop: true,
-    slidesPerView: 1.1, // Updated value per your request
+    slidesPerView: 1.1,
     spaceBetween: 30,
   });
 }

@@ -34,7 +34,11 @@
   flex-direction: column;
   gap: 2rem;
 
-  width: 50%;
+  width: 55%;
+}
+
+.forgotForm {
+  width: 85%;
 }
 
 .inputError_container > input {
@@ -79,17 +83,20 @@
 .login_slider {
   height: 33.33rem;
   max-width: 100%;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
 }
 
 .login_slider_img {
   max-height: 100%;
   max-width: 100%;
   object-fit: cover;
+  border-radius: 0.5rem;
 }
 
 .heroSwiper_btnMainContainer {
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   z-index: 1000;
   position: absolute;
   bottom: -4.5%;
@@ -99,18 +106,19 @@
 .heroSwiper_btnContainer_btn {
   display: flex;
   background-color: var(--color-green);
-  padding: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.2rem;
 }
 
 .heroSwiper_btnContainer_btnLeft {
   color: var(--color-white);
-  font-size: 2rem;
+  font-size: 1.7rem;
   cursor: pointer;
 }
 
 .heroSwiper_btnContainer_btnRight {
   color: var(--color-white);
-  font-size: 2rem;
+  font-size: 1.7rem;
   cursor: pointer;
 }
 
