@@ -101,26 +101,26 @@
   gap: 1.5rem;
   z-index: 1000;
   position: absolute;
-  bottom: -4.5%;
+  bottom: -3%;
   right: 32%;
 }
 
 .heroSwiper_btnContainer_btn {
   display: flex;
   background-color: var(--color-green);
-  padding: 0.3rem 0.5rem;
+  padding: 0.55rem 0.7rem;
   border-radius: 0.2rem;
 }
 
 .heroSwiper_btnContainer_btnLeft {
   color: var(--color-white);
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
 .heroSwiper_btnContainer_btnRight {
   color: var(--color-white);
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 
