@@ -29,6 +29,8 @@
   --padding-login-leftContainer: 0rem 0rem 0rem 3rem;
   --padding-login-section: 0rem 3rem;
   --padding-login-footer: 2rem;
+  --margin-bottom: 0rem 0rem 2rem 0rem;
+  --margin-top-bottom: 2rem 0rem;
 }
 
 html {
@@ -89,4 +91,10 @@ body {
   background: var(--color-green);
   border-radius: 10px;
   border: 3px solid transparent;
+}
+
+.sectionContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
