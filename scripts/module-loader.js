@@ -1,11 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modules = [
-    { id: "header-module", path: "modules/header.html" },
-    { id: "login-hero-module", path: "modules/login-hero.html" },
-    { id: "best-employee-module", path: "modules/best-employee.html" },
-    { id: "fun-facts-module", path: "modules/fun-facts.html" },
-    { id: "latest-news-module", path: "modules/latest-news.html" },
-    { id: "footer-module", path: "modules/footer.html" },
+    {
+      id: "header-module",
+      path: "modules/header.html",
+      initFunction: "headerInit",
+    },
+    {
+      id: "login-hero-module",
+      path: "modules/login-hero.html",
+      initFunction: "loginHeroInit",
+    },
+    {
+      id: "best-employee-module",
+      path: "modules/best-employee.html",
+      initFunction: "bestEmployeeInit",
+    },
+    {
+      id: "fun-facts-module",
+      path: "modules/fun-facts.html",
+      initFunction: "funFactsInit",
+    },
+    {
+      id: "latest-news-module",
+      path: "modules/latest-news.html",
+      initFunction: "latestNewsInit",
+    },
+    {
+      id: "footer-module",
+      path: "modules/footer.html",
+      initFunction: "footerInit",
+    },
   ];
 
   modules.forEach((module) => {
@@ -21,17 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
           .replace(".html", ".js")}`;
         const script = document.createElement("script");
         script.src = scriptPath;
-        // When the module's script loads, call its init function if available.
+
+        // When the module's script loads, call its init function if available
         script.onload = () => {
-          // For the login-hero module, we call loginHeroInit if it exists.
           if (
-            module.id === "login-hero-module" &&
-            typeof loginHeroInit === "function"
+            module.initFunction &&
+            typeof window[module.initFunction] === "function"
           ) {
-            loginHeroInit();
+            window[module.initFunction]();
           }
-          // Add similar conditions for other modules if needed.
         };
+
         document.body.appendChild(script);
       })
       .catch((error) => console.error(`Error loading ${module.path}:`, error));
