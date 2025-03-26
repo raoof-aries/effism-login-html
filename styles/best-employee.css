@@ -1,36 +1,63 @@
 .bestEmployee_section {
-  padding: var(--padding-login-section);
   display: flex;
   flex-direction: column;
+  gap: 3rem;
+  padding: 0rem 2rem;
+}
+
+.bestEmployee_header {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
 }
 
 .login_sectionHeading_left {
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.03rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a2e;
   position: relative;
 }
 
 .login_sectionHeading_left::after {
   content: "";
   position: absolute;
-  bottom: -5px;
-  left: 30%;
-  width: 40%;
-  border-bottom: 3px solid var(--color-green);
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-green);
+  border-radius: 2px;
+}
+
+.bestEmployee_navigation {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background-color: var(--color-green);
+  color: white;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: var(--color-green);
+  transform: scale(1.05);
 }
 
 .bestEmployee_slider_container {
-  display: flex;
-  gap: 3rem;
-  max-width: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
-.bestEmployee_swiper {
-  padding: 2rem 0;
-  max-width: 100%;
+.best-employee-wrapper {
+  padding: 1rem 0rem 2rem 0rem;
 }
