@@ -5,7 +5,7 @@
       image: "../assets/images/LoginPage/user/1.jpg",
       title: "John Smith",
       monthYear: "March 2024",
-      department: "Sales",
+      department: "AIMRI",
       description:
         "Exceptional performance in sales, consistently exceeding targets and providing outstanding customer service.",
     },
@@ -13,7 +13,7 @@
       image: "../assets/images/LoginPage/user/2.jpg",
       title: "Emily Johnson",
       monthYear: "March 2024",
-      department: "Project Management",
+      department: "e Solutions",
       description:
         "Demonstrated strong leadership skills and teamwork, leading the team to successful project completion ahead of schedule.",
     },
@@ -21,7 +21,7 @@
       image: "../assets/images/LoginPage/user/3.jpg",
       title: "Michael Williams",
       monthYear: "March 2024",
-      department: "Innovation",
+      department: "One",
       description:
         "Innovative problem-solver, implementing creative solutions resulting in significant cost savings.",
     },
@@ -37,7 +37,7 @@
       image: "../assets/images/LoginPage/user/5.jpg",
       title: "Matthew Davis",
       monthYear: "March 2024",
-      department: "Quality Assurance",
+      department: "Admin",
       description:
         "Exceptional attention to detail, ensuring all projects are delivered to the highest standards.",
     },
