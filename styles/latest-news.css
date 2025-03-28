@@ -61,3 +61,33 @@
 .latest-news-wrapper {
   padding: 1rem 0rem 2rem 3rem;
 }
+
+@media (max-width: 500px) {
+  .latestNews_section {
+    padding-top: 2rem;
+    gap: 1.5rem;
+  }
+  .latestNews_header {
+    align-items: center !important;
+    justify-content: center;
+  }
+
+  .latest-news-wrapper {
+    padding: 1rem 0rem 3rem 1.5rem;
+  }
+
+  .login_sectionHeading_left::after {
+    content: "";
+    position: unset;
+    bottom: unset;
+    left: unset;
+    width: unset;
+    height: unset;
+    background-color: unset;
+    border-radius: unset;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}

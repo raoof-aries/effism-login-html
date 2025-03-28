@@ -108,9 +108,26 @@
   }
   .funFacts_CardsContainer {
     flex-direction: column;
+    gap: 1rem;
   }
 
   .login_card {
     margin-bottom: 1rem;
+  }
+
+  .funFacts_section {
+    padding: 4rem 1.5rem;
+    gap: 3rem;
+  }
+
+  .login_sectionHeading_center::after {
+    content: "";
+    position: unset;
+    bottom: unset;
+    left: unset;
+    width: unset;
+    height: unset;
+    background-color: unset;
+    border-radius: unset;
   }
 }
