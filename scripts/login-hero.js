@@ -31,7 +31,7 @@ function loginHeroInit() {
 
     setTimeout(() => {
       forgotPasswordForm.style.display = "none";
-      loginFormSubmit.style.display = "block";
+      loginFormSubmit.style.display = "flex";
       loginTitle.style.display = "block";
       loginFormSubmit.classList.remove("fade-out");
       loginFormSubmit.classList.add("fade-in");

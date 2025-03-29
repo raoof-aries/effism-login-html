@@ -37,6 +37,12 @@
   width: 55%;
 }
 
+.forgotPasswordForm {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2rem !important;
+}
+
 .forgotForm {
   width: 85%;
 }
